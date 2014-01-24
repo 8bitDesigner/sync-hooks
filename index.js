@@ -1,4 +1,5 @@
 var GitHub = require('node-github')
+  , async = require('async')
   , github = new GitHub({ version: "3.0.0" })
   , _ = require('underscore')
   , noop = function() {}
@@ -19,12 +20,12 @@ function main(opts, doneConfiguringHooks) {
     getOurHook(url, config, function(err, hook) {
       if (err) { return done(err) }
 
-      if (hook && ! _(hook.events).deepEqual(config.events)) {
+      if (hook && ! _(hook.events).isEqual(config.events)) {
         updateHook(hook, config, doneUpdatingHook)
       } else if (!hook) {
         createHook(url, config, doneUpdatingHook)
       } else {
-        done(null, hook)
+        doneUpdatingHook(null, hook)
       }
     })
   }, doneConfiguringHooks)
@@ -62,7 +63,7 @@ function getOurHook(url, config, cb) {
     return (hook.config && hook.config.url === url)
   }
 
-  github.getHooks({user: config.user, repo: config.repo}, function(err, hooks) {
+  github.repos.getHooks({user: config.user, repo: config.repo}, function(err, hooks) {
     if (err) { cb(err) }
     else { cb(err, hooks.filter(isOurHook).pop()) }
   })

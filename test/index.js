@@ -29,16 +29,45 @@ describe('The sync hooks function', function() {
 
   it('should return our hook from an array of hooks', function(done) {
     var config = {user: 'foo', repo: 'bar', url: 'http://foobar.com'}
-      , oldGetHooks = syncHooks.github.getHooks
+      , oldGetHooks = syncHooks.github.repos.getHooks
 
-    syncHooks.github.getHooks = function(config, callback) {
+    syncHooks.github.repos.getHooks = function(config, callback) {
       callback(null, mockhooks)
     }
 
     syncHooks.getOurHook('http://foobar.com', config, function(err, hook) {
       assert.deepEqual(hook, mockhooks[1])
-      syncHooks.github.getHooks = oldGetHooks
+      syncHooks.github.repos.getHooks = oldGetHooks
       done()
     })
   })
+
+  /*
+  it("should not find hooks on a repo that is inaccessible", function (done) {
+    var octopie = octoFactory();
+    octopie.add('fullscreeninc/bacon');
+    octopie._configureHooks(function (err, hooks) {
+      assert.deepEqual(hooks, [])
+      done();
+    });
+  });
+
+  it("should create our hook in response to not finding our hook", function (done) {
+    var octopie = octoFactory();
+    octopie.add('ryancbarry/underscore');
+    octopie.on('issues', function () {});
+    octopie.on('pull_request', function () {});
+    octopie._configureHooks(function (err, hooks) {
+      console.log('configured : hooks:\n', hooks);
+      // assert.deepEqual(hooks, [])
+      // var hook = hooks[0];
+      // assert(hook.config.url === 'http://google.com');
+      // assert(hook.name === 'web');
+      // assert.deepEqual(hook.events, ['issues', 'pull_request']);
+      // assert(hook.config.content_type === 'json');
+      // assert(hook.config.insecure_ssl === '1');
+      done();
+    });
+  });
+  */
 })
