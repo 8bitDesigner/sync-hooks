@@ -20,5 +20,12 @@
   "dependencies": {
     "node-github": "0.0.3",
     "underscore": "~1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/8bitDesigner/sync-hooks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/8bitDesigner/sync-hooks/issues"
   }
 }
