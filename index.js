@@ -72,7 +72,7 @@ function getOurHook(url, config, cb) {
 function updateHook(hook, config, cb) {
   var updated = _.extend({}, config)    // user, repo, events
   updated.id = hook.id
-  updated.config = hooks.config
+  updated.config = hook.config
   updated.name = 'web'
 
   github.repos.updateHook(updated, cb)
