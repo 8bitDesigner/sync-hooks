@@ -1,0 +1,23 @@
+{
+  "name": "sync-hooks",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "watch": "mocha -w test"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "sinon": "~1.7.3"
+  },
+  "dependencies": {
+    "node-github": "0.0.3",
+    "underscore": "~1.5.2"
+  }
+}

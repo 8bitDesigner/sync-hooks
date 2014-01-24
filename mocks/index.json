@@ -1,0 +1,79 @@
+[
+  {
+    "url": "https://api.github.com/repos/8bitDesigner/OctoPie/hooks/1712029",
+    "test_url": "https://api.github.com/repos/8bitDesigner/OctoPie/hooks/1712029/test",
+    "id": 1712029,
+    "name": "web",
+    "active": true,
+    "events": [
+      "commit_comment",
+      "create",
+      "delete",
+      "download",
+      "follow",
+      "fork",
+      "fork_apply",
+      "gist",
+      "gollum",
+      "issue_comment",
+      "deployment",
+      "deployment_status"
+    ],
+    "config": {
+      "url": "http://google.com",
+      "content_type": "json",
+      "insecure_ssl": "1"
+    },
+    "last_response": {
+      "code": 422,
+      "status": "disabled",
+      "message": "Invalid HTTP Response: 405"
+    },
+    "updated_at": "2014-01-23T22:46:26Z",
+    "created_at": "2014-01-22T02:09:57Z"
+  },
+  {
+    "url": "https://api.github.com/repos/8bitDesigner/OctoPie/hooks/1712029",
+    "test_url": "https://api.github.com/repos/8bitDesigner/OctoPie/hooks/1712029/test",
+    "id": 1712029,
+    "name": "web",
+    "active": true,
+    "events": [
+      "deployment_status"
+    ],
+    "config": {
+      "url": "http://foobar.com",
+      "content_type": "json",
+      "insecure_ssl": "1"
+    },
+    "last_response": {
+      "code": 422,
+      "status": "disabled",
+      "message": "Invalid HTTP Response: 405"
+    },
+    "updated_at": "2014-01-23T22:46:26Z",
+    "created_at": "2014-01-22T02:09:57Z"
+  },
+  {
+    "url": "https://api.github.com/repos/8bitDesigner/OctoPie/hooks/1712029",
+    "test_url": "https://api.github.com/repos/8bitDesigner/OctoPie/hooks/1712029/test",
+    "id": 1712029,
+    "name": "web",
+    "active": true,
+    "events": [
+      "push"
+    ],
+    "config": {
+      "url": "http://somethingelse.com",
+      "content_type": "json",
+      "insecure_ssl": "1"
+    },
+    "last_response": {
+      "code": 422,
+      "status": "disabled",
+      "message": "Invalid HTTP Response: 405"
+    },
+    "updated_at": "2014-01-23T22:46:26Z",
+    "created_at": "2014-01-22T02:09:57Z"
+  }
+]
