@@ -1,6 +1,6 @@
 {
   "name": "sync-hooks",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Function to install a batch of GitHub event hooks at once",
   "main": "index.js",
   "scripts": {
