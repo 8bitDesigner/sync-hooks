@@ -1,4 +1,4 @@
-var GitHub = require('node-github')
+var GitHub = require('github')
   , async = require('async')
   , github = new GitHub({ version: "3.0.0" })
   , _ = require('underscore')
