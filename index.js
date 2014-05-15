@@ -18,7 +18,7 @@ function main(opts, doneConfiguringHooks) {
 
   async.map(repos, function(config, doneUpdatingHook) {
     getOurHook(url, config, function(err, hook) {
-      if (err) { return done(err) }
+      if (err) { return doneConfiguringHooks(err) }
 
       if (hook && ! _(hook.events).isEqual(config.events)) {
         updateHook(hook, config, doneUpdatingHook)
